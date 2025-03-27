@@ -18,3 +18,7 @@ We create another Keychain and add the same certificate with full trust. When we
 ## CookieFeeder
 
 This is another tool to help you disable all the protections from the intercepted traffic (CSP, Integrity, etc) and inject abitrary Javascript. You can use it in combination with [https://github.com/](https://github.com/MythicAgents/bowser). It also a chrome extension that allows you to clone the target's browser by simply embedding the captured cookies.
+
+## TCC Bypass
+
+tcc.py is an MITMProxy script that can be used to bypass TCC. By hijacking the response of the "sudo jamf recon" command. It is possible to control what is executed by the jamf binary. The jamf binary is usually deployed with a PPPC rule to grant FDA: anything executed by the binary inherits its privileges.

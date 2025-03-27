@@ -11,6 +11,7 @@ Follow this in case you want to do a full setup, including the server for captur
 2. Clone the repository:
     ```
     git clone https://github.com/thiagomayllart/Blender
+    pip3 install bs4 pycryptodome
     cd Blender/CookieFeeder
     ``` 
 3. Install mitmproxy:

@@ -52,6 +52,7 @@ Follow this in case you want to do a full setup, including the server for captur
 14. Store your settings.pac file (and change the name) in the root of your apache web server.
 15. Start the proxy:
     ```
+    mkdir logs
     mitmdump -s cookie_monitor.py --set stream_large_bodies=1m --set flow_detail=0 --set max_flow_size=100m --set connection_strategy=lazy --set block_global=false -p 8080
     ```
 

@@ -10,8 +10,8 @@ Follow this in case you want to do a full setup, including the server for captur
 
 2. Clone the repository:
     ```
-    git clone https://github.com/thiagomayllart/CookieSnatcher
-    cd CookieSnatcher/CookieFeeder
+    git clone https://github.com/thiagomayllart/Blender
+    cd Blender/CookieFeeder
     ``` 
 3. Install mitmproxy:
     ```

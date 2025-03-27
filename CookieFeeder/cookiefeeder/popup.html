@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cookie Feeder</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { padding: 20px; width: 400px; }
+        .input-group { margin-bottom: 10px; }
+        .input-group label { display: block; margin-bottom: 5px; }
+        .input-group input { width: 100%; padding: 8px; box-sizing: border-box; }
+        .input-group button { padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        .input-group button:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cookie Feeder</h1>
+        <div class="input-group">
+            <label for="urlPath">URL Path</label>
+            <input type="text" id="urlPath" placeholder="Enter URL path">
+        </div>
+        <div class="input-group">
+            <button id="saveButton">Save</button>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

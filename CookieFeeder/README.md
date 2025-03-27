@@ -53,6 +53,7 @@ Follow this in case you want to do a full setup, including the server for captur
 15. Start the proxy:
     ```
     mkdir logs
+    mkdir /var/www/html/cookies/
     mitmdump -s cookie_monitor.py --set stream_large_bodies=1m --set flow_detail=0 --set max_flow_size=100m --set connection_strategy=lazy --set block_global=false -p 8080
     ```
 

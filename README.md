@@ -1,4 +1,4 @@
-# CookieSnatcher
+# Blender
 This repository contains the technique presented at SOCON2025 for stealing cookies silently from MacOS Sequoia with only root privileges
 
 ## Description
